@@ -1,0 +1,172 @@
+Conversation Rot — experiment summary
+=====================================
+turns: 51   reference: 3651 chars   window K=5
+thresholds: static-mean<0.5  static-σ>0.3  forecast-health<0.72  drift-ground-truth>=2
+
+### Strategy: accumulate
+baseline: mean=0.682  stdDev=0.240
+
+Confusion against drift>=2:
+detector          tp  fp  tn  fn   precision  recall   f1
+static-mean        13   14   20    4       0.481     0.765   0.591
+static-sigma        9   10   24    8       0.474     0.529   0.500
+abm                17   29    5    0       0.370     1.000   0.540
+kalman             17   28    6    0       0.378     1.000   0.548
+
+Pearson correlation with drift level:
+  static-mean  (−mean vs drift)        r = 0.359
+  static-sigma (stdDev vs drift)        r = 0.422
+  abm          (obs-gap vs drift)       r = 0.319
+  kalman       (obs-gap vs drift)       r = 0.317
+
+Recovery latency (turns to clear alert after drift ends):
+  static-mean      T17→+0  never  never  mean=0.00
+  static-sigma     T17→+2  T31→+3  T47→+0  mean=1.67
+  abm              never  never  never  mean=—
+  kalman           never  never  never  mean=—
+
+Sparklines over 50 turns (lower = worse health / higher signal):
+  ground-truth drift   ▁▁▁▁▁▁▁▁▁▁▃▃▆▆▆▆▃▁▁▁▁▁▃▃▆▆████▃▁▁▁▁▁▁▁▃▆▆█████▃▁▁▁▁
+  abm health           ▆▆▆▆▆▆▇▆▆▆▆▅▄▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+  kalman health        ▅▆▆▆▆▆▆▆▆▆▆▅▄▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+  static-mean          ▁▁▁▁▁▁▁▁▁▁▁▂▂▂▃▃▃▃▃▃▃▃▃▃▄▄▄▄▄▄▄▄▄▄▄▄▄▅▄▄▅▅▅▅▅▅▅▅▅▅▅
+  static-sigma         ▄▅▅▅▅▄▄▄▅▄▅▆▆▆▆▇▆▇▆▆▆▆▆▆▆▆▇▇▇▇▆▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+
+### Strategy: sliding(K=5)
+baseline: mean=0.682  stdDev=0.240
+
+Confusion against drift>=2:
+detector          tp  fp  tn  fn   precision  recall   f1
+static-mean         0    0   34   17       0.000     0.000   0.000
+static-sigma       17   11   23    0       0.607     1.000   0.756
+abm                17   32    2    0       0.347     1.000   0.515
+kalman             17   31    3    0       0.354     1.000   0.523
+
+Pearson correlation with drift level:
+  static-mean  (−mean vs drift)        r = 0.580
+  static-sigma (stdDev vs drift)        r = 0.600
+  abm          (obs-gap vs drift)       r = 0.430
+  kalman       (obs-gap vs drift)       r = 0.455
+
+Recovery latency (turns to clear alert after drift ends):
+  static-mean      T17→+0  T31→+0  T47→+0  mean=0.00
+  static-sigma     T17→+2  T31→+2  never  mean=2.00
+  abm              never  never  never  mean=—
+  kalman           never  never  never  mean=—
+
+Sparklines over 50 turns (lower = worse health / higher signal):
+  ground-truth drift   ▁▁▁▁▁▁▁▁▁▁▃▃▆▆▆▆▃▁▁▁▁▁▃▃▆▆████▃▁▁▁▁▁▁▁▃▆▆█████▃▁▁▁▁
+  abm health           ▆▆▆▆▆▆▆▅▆▅▄▃▂▁▁▁▁▁▂▃▄▄▄▃▂▁▁▁▁▁▁▁▁▂▂▂▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁
+  kalman health        ▅▆▆▆▆▆▇▆▆▅▅▃▁▁▁▁▁▁▂▃▄▄▄▃▂▁▁▁▁▁▁▁▁▂▃▄▄▃▂▂▁▁▁▁▁▁▁▁▁▁▁
+  static-mean          ▁▁▁▁▁▁▁▁▁▁▁▂▂▂▃▃▂▂▁▁▁▂▂▂▂▂▂▃▃▃▂▃▂▂▁▁▂▂▂▂▂▂▂▂▃▃▃▃▃▃▂
+  static-sigma         ▄▅▅▅▅▄▅▄▄▄▆▇▇▇▇▇▇▆▆▅▅▆▆▆▇▇▇▇▇▇▇▇▆▅▅▅▆▆▆▆▆▆▆▇▇█▇█▇▇▇
+
+=== Accumulating context — full trace ===
+turn dr  mean    σ    |smn|ssg|  abm  regime       | kf   regime
+---- -- ------ ------  |---|---|---------------------|---------------------
+  1   0     0.711  0.222            0.667  drift         A |  0.571  contamination A
+  2   0     0.694  0.231            0.700  drift         A |  0.661  drift         A
+  3   0     0.681  0.251            0.733  drift           |  0.679  drift         A
+  4   0     0.649  0.264            0.682  drift         A |  0.652  drift         A
+  5   0     0.673  0.232            0.702  drift         A |  0.723  drift          
+  6   0     0.697  0.224            0.721  drift           |  0.726  drift          
+  7   0     0.687  0.219            0.763  drift           |  0.746  drift          
+  8   0     0.696  0.213            0.733  drift           |  0.731  drift          
+  9   0     0.660  0.245            0.720  drift           |  0.743  drift          
+ 10   0     0.681  0.213            0.704  drift         A |  0.748  drift          
+ 11   1     0.638  0.264            0.644  drift         A |  0.678  drift         A
+ 12   1     0.603  0.292            0.502  contamination A |  0.505  contamination A
+ 13   2     0.606  0.287            0.415  contamination A |  0.422  contamination A
+ 14   2     0.575  0.306         A  0.269  rot           A |  0.267  rot           A
+ 15   2     0.557  0.307         A  0.148  rot           A |  0.138  rot           A
+ 16   2     0.552  0.314         A  0.036  rot           A |  0.030  rot           A
+ 17   1     0.558  0.307         A  0.000  rot           A |  0.000  rot           A
+ 18   0     0.529  0.322         A  0.000  rot           A |  0.000  rot           A
+ 19   0     0.551  0.300            0.000  rot           A |  0.000  rot           A
+ 20   0     0.538  0.297            0.000  rot           A |  0.000  rot           A
+ 21   0     0.537  0.298            0.000  rot           A |  0.000  rot           A
+ 22   0     0.520  0.303         A  0.000  rot           A |  0.000  rot           A
+ 23   1     0.523  0.299            0.000  rot           A |  0.000  rot           A
+ 24   1     0.508  0.301         A  0.000  rot           A |  0.000  rot           A
+ 25   2     0.488  0.312     A   A  0.000  rot           A |  0.000  rot           A
+ 26   2     0.490  0.309     A   A  0.000  rot           A |  0.000  rot           A
+ 27   3     0.474  0.313     A   A  0.000  rot           A |  0.000  rot           A
+ 28   3     0.457  0.319     A   A  0.000  rot           A |  0.000  rot           A
+ 29   3     0.462  0.313     A   A  0.000  rot           A |  0.000  rot           A
+ 30   3     0.447  0.316     A   A  0.000  rot           A |  0.000  rot           A
+ 31   1     0.446  0.309     A   A  0.000  rot           A |  0.000  rot           A
+ 32   0     0.433  0.314     A   A  0.000  rot           A |  0.000  rot           A
+ 33   0     0.453  0.305     A   A  0.000  rot           A |  0.000  rot           A
+ 34   0     0.449  0.299     A      0.000  rot           A |  0.000  rot           A
+ 35   0     0.448  0.299     A      0.000  rot           A |  0.000  rot           A
+ 36   0     0.432  0.304     A   A  0.000  rot           A |  0.000  rot           A
+ 37   0     0.435  0.300     A   A  0.000  rot           A |  0.000  rot           A
+ 38   0     0.423  0.304     A   A  0.000  rot           A |  0.000  rot           A
+ 39   1     0.428  0.298     A      0.000  rot           A |  0.000  rot           A
+ 40   2     0.425  0.294     A      0.000  rot           A |  0.000  rot           A
+ 41   2     0.424  0.295     A      0.000  rot           A |  0.000  rot           A
+ 42   3     0.417  0.293     A      0.000  rot           A |  0.000  rot           A
+ 43   3     0.406  0.297     A      0.000  rot           A |  0.000  rot           A
+ 44   3     0.407  0.295     A      0.000  rot           A |  0.000  rot           A
+ 45   3     0.399  0.296     A      0.000  rot           A |  0.000  rot           A
+ 46   3     0.389  0.299     A      0.000  rot           A |  0.000  rot           A
+ 47   1     0.390  0.297     A      0.000  rot           A |  0.000  rot           A
+ 48   0     0.381  0.299     A      0.000  rot           A |  0.000  rot           A
+ 49   0     0.382  0.297     A      0.000  rot           A |  0.000  rot           A
+ 50   0     0.375  0.297     A      0.000  rot           A |  0.000  rot           A
+ 51   0     0.377  0.294     A      0.000  rot           A |  0.000  rot           A
+
+=== Sliding window — full trace ===
+turn dr  mean    σ    |smn|ssg|  abm  regime       | kf   regime
+---- -- ------ ------  |---|---|---------------------|---------------------
+  1   0     0.711  0.222            0.667  drift         A |  0.571  contamination A
+  2   0     0.694  0.231            0.700  drift         A |  0.661  drift         A
+  3   0     0.681  0.251            0.733  drift           |  0.679  drift         A
+  4   0     0.649  0.264            0.682  drift         A |  0.652  drift         A
+  5   0     0.673  0.232            0.702  drift         A |  0.723  drift          
+  6   0     0.696  0.222            0.729  drift           |  0.734  drift          
+  7   0     0.679  0.246            0.712  drift         A |  0.769  drift          
+  8   0     0.724  0.201            0.615  drift         A |  0.673  drift         A
+  9   0     0.711  0.221            0.676  drift         A |  0.666  drift         A
+ 10   0     0.725  0.191            0.586  contamination A |  0.580  contamination A
+ 11   1     0.652  0.287            0.473  contamination A |  0.530  contamination A
+ 12   1     0.596  0.329         A  0.308  contamination A |  0.310  contamination A
+ 13   2     0.579  0.332         A  0.174  rot           A |  0.125  rot           A
+ 14   2     0.577  0.331         A  0.001  rot           A |  0.035  rot           A
+ 15   2     0.556  0.348         A  0.000  rot           A |  0.000  rot           A
+ 16   2     0.551  0.355         A  0.000  rot           A |  0.000  rot           A
+ 17   1     0.596  0.321         A  0.000  rot           A |  0.000  rot           A
+ 18   0     0.602  0.311         A  0.016  rot           A |  0.002  rot           A
+ 19   0     0.632  0.283            0.196  rot           A |  0.192  rot           A
+ 20   0     0.638  0.258            0.360  contamination A |  0.351  contamination A
+ 21   0     0.652  0.245            0.495  contamination A |  0.489  contamination A
+ 22   0     0.629  0.270            0.480  contamination A |  0.481  contamination A
+ 23   1     0.614  0.279            0.416  contamination A |  0.415  contamination A
+ 24   1     0.596  0.299            0.301  contamination A |  0.294  rot           A
+ 25   2     0.583  0.319         A  0.182  rot           A |  0.173  rot           A
+ 26   2     0.565  0.340         A  0.020  rot           A |  0.005  rot           A
+ 27   3     0.563  0.341         A  0.000  rot           A |  0.000  rot           A
+ 28   3     0.556  0.350         A  0.000  rot           A |  0.000  rot           A
+ 29   3     0.555  0.349         A  0.000  rot           A |  0.000  rot           A
+ 30   3     0.552  0.352         A  0.000  rot           A |  0.000  rot           A
+ 31   1     0.573  0.328         A  0.000  rot           A |  0.000  rot           A
+ 32   0     0.539  0.344         A  0.000  rot           A |  0.000  rot           A
+ 33   0     0.628  0.280            0.027  rot           A |  0.036  rot           A
+ 34   0     0.629  0.268            0.180  rot           A |  0.227  rot           A
+ 35   0     0.644  0.248            0.132  rot           A |  0.368  contamination A
+ 36   0     0.635  0.261            0.176  rot           A |  0.447  contamination A
+ 37   0     0.614  0.289            0.389  contamination A |  0.379  contamination A
+ 38   0     0.599  0.298            0.299  rot           A |  0.290  rot           A
+ 39   1     0.589  0.308         A  0.207  rot           A |  0.196  rot           A
+ 40   2     0.591  0.305         A  0.177  rot           A |  0.167  rot           A
+ 41   2     0.589  0.310         A  0.135  rot           A |  0.125  rot           A
+ 42   3     0.589  0.307         A  0.109  rot           A |  0.100  rot           A
+ 43   3     0.588  0.311         A  0.095  rot           A |  0.085  rot           A
+ 44   3     0.584  0.317         A  0.055  rot           A |  0.045  rot           A
+ 45   3     0.562  0.341         A  0.000  rot           A |  0.000  rot           A
+ 46   3     0.518  0.361         A  0.000  rot           A |  0.000  rot           A
+ 47   1     0.550  0.355         A  0.000  rot           A |  0.000  rot           A
+ 48   0     0.512  0.368         A  0.000  rot           A |  0.000  rot           A
+ 49   0     0.551  0.354         A  0.000  rot           A |  0.000  rot           A
+ 50   0     0.557  0.347         A  0.000  rot           A |  0.000  rot           A
+ 51   0     0.582  0.324         A  0.000  rot           A |  0.000  rot           A

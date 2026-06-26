@@ -1,0 +1,41 @@
+{
+  "name": "contrarianai-predictor-corrector",
+  "version": "0.1.1",
+  "description": "Forecasts the ideal bell curve of context-window alignment using predictor-corrector numerical methods. Companion to context-inspector.",
+  "bin": {
+    "contrarianai-predictor-corrector": "./cli.js",
+    "predictor-corrector": "./cli.js"
+  },
+  "main": "core/index.js",
+  "scripts": {
+    "cli": "node cli.js",
+    "mcp": "node mcp-server.js",
+    "test": "node test/run.js",
+    "demo": "node sim/demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevin-luddy39/contrarianAI.git",
+    "directory": "tools/predictor-corrector"
+  },
+  "author": {
+    "name": "Kevin Luddy",
+    "email": "kevin.luddy39@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ai",
+    "llm",
+    "context-window",
+    "predictor-corrector",
+    "numerical-methods",
+    "bell-tuning",
+    "contrarianai",
+    "mcp",
+    "forecasting"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "contrarianai-context-inspector": "^0.2.15"
+  }
+}

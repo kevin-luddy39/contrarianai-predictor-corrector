@@ -1,0 +1,2065 @@
+{
+  "experiment": "unseen-tide",
+  "turns": 40,
+  "baseline": {
+    "mean": 0.7686,
+    "stdDev": 0.1883,
+    "skewness": 0.0716,
+    "kurtosis": -1.755
+  },
+  "thresholds": {
+    "staticMean": 0.5,
+    "staticSigma": 0.3,
+    "forecastHealth": 0.72
+  },
+  "phases": [
+    {
+      "phase": 1,
+      "label": "calibration",
+      "turns": 10
+    },
+    {
+      "phase": 2,
+      "label": "stylistic",
+      "turns": 10
+    },
+    {
+      "phase": 3,
+      "label": "adjacent",
+      "turns": 10
+    },
+    {
+      "phase": 4,
+      "label": "contamination",
+      "turns": 10
+    }
+  ],
+  "rows": [
+    {
+      "turn": 1,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7714,
+      "stdDev": 0.1913,
+      "skew": 0.0728,
+      "kurt": -1.7678,
+      "count": 9,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7714,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1913,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.8555389824006082,
+          "alert": false,
+          "regime": "healthy",
+          "error": 0.004103656905736657,
+          "milne": 0,
+          "signals": {
+            "forecastError": 0.004103656905736657,
+            "forecastErr": 0,
+            "baselineDistance": 0.004103656905736657,
+            "milneError": 0,
+            "histogramKL": 0.25210247366976735,
+            "histogramW1": 0.06489322377244669
+          }
+        },
+        "kalman": {
+          "metric": 0.855384978404672,
+          "alert": false,
+          "regime": "healthy",
+          "error": 0.004103656905736657,
+          "milne": 0.06441149251170103,
+          "signals": {
+            "forecastError": 0.004103656905736657,
+            "forecastErr": 0.002193138390526292,
+            "baselineDistance": 0.004103656905736657,
+            "milneError": 0.06441149251170103,
+            "histogramKL": 0.2525138663305519,
+            "histogramW1": 0.06495461076933479
+          }
+        }
+      }
+    },
+    {
+      "turn": 2,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7724,
+      "stdDev": 0.1815,
+      "skew": 0.0608,
+      "kurt": -1.633,
+      "count": 10,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7724,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1815,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.8718738369343849,
+          "alert": false,
+          "regime": "healthy",
+          "error": 0.005578088878506071,
+          "milne": 0,
+          "signals": {
+            "forecastError": 0.005578088878506071,
+            "forecastErr": 0.0038205077387592047,
+            "baselineDistance": 0.005578088878506071,
+            "milneError": 0,
+            "histogramKL": 0.1966361407415972,
+            "histogramW1": 0.0501358424282103
+          }
+        },
+        "kalman": {
+          "metric": 0.8718494853388078,
+          "alert": false,
+          "regime": "healthy",
+          "error": 0.005578088878506071,
+          "milne": 0.7764060788279099,
+          "signals": {
+            "forecastError": 0.005578088878506071,
+            "forecastErr": 0.005088376134633994,
+            "baselineDistance": 0.005578088878506071,
+            "milneError": 0.7764060788279099,
+            "histogramKL": 0.19666406330255076,
+            "histogramW1": 0.05015668757461677
+          }
+        }
+      }
+    },
+    {
+      "turn": 3,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7767,
+      "stdDev": 0.1739,
+      "skew": -0.0088,
+      "kurt": -1.5273,
+      "count": 11,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7767,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1739,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.8574152668502336,
+          "alert": false,
+          "regime": "healthy",
+          "error": 0.009955574837350536,
+          "milne": 0,
+          "signals": {
+            "forecastError": 0.009955574837350536,
+            "forecastErr": 0.006245596196954158,
+            "baselineDistance": 0.009955574837350536,
+            "milneError": 0,
+            "histogramKL": 0.14619978749629323,
+            "histogramW1": 0.04759714483202733
+          }
+        },
+        "kalman": {
+          "metric": 0.8555689309632568,
+          "alert": false,
+          "regime": "healthy",
+          "error": 0.009955574837350536,
+          "milne": 1.4020503178391028,
+          "signals": {
+            "forecastError": 0.009955574837350536,
+            "forecastErr": 0.008855942832574081,
+            "baselineDistance": 0.009955574837350536,
+            "milneError": 1.4020503178391028,
+            "histogramKL": 0.14670949429309618,
+            "histogramW1": 0.04965983585735868
+          }
+        }
+      }
+    },
+    {
+      "turn": 4,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7644,
+      "stdDev": 0.1743,
+      "skew": 0.1914,
+      "kurt": -1.5151,
+      "count": 11,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7644,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1743,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.8348454182601744,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.011819916547400222,
+          "milne": 0,
+          "signals": {
+            "forecastError": 0.011819916547400222,
+            "forecastErr": 0.007607385636348888,
+            "baselineDistance": 0.011819916547400222,
+            "milneError": 0,
+            "histogramKL": 0.19105557368160164,
+            "histogramW1": 0.04630949360410845
+          }
+        },
+        "kalman": {
+          "metric": 0.834519637566558,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.011819916547400222,
+          "milne": 1.510925916961855,
+          "signals": {
+            "forecastError": 0.011819916547400222,
+            "forecastErr": 0.010517426368178312,
+            "baselineDistance": 0.011819916547400222,
+            "milneError": 1.510925916961855,
+            "histogramKL": 0.19117515966951404,
+            "histogramW1": 0.046664554640074477
+          }
+        }
+      }
+    },
+    {
+      "turn": 5,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7905,
+      "stdDev": 0.1773,
+      "skew": -0.0766,
+      "kurt": -1.5541,
+      "count": 12,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7905,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1773,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7866689057643836,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.0168948882634497,
+          "milne": 0.0009062398200465314,
+          "signals": {
+            "forecastError": 0.0168948882634497,
+            "forecastErr": 0.015574704680579483,
+            "baselineDistance": 0.0168948882634497,
+            "milneError": 0.0009062398200465314,
+            "histogramKL": 0.20153119864486102,
+            "histogramW1": 0.06037884738168373
+          }
+        },
+        "kalman": {
+          "metric": 0.7900469787916442,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.0168948882634497,
+          "milne": 1.5796601402612298,
+          "signals": {
+            "forecastError": 0.0168948882634497,
+            "forecastErr": 0.012877763540334358,
+            "baselineDistance": 0.0168948882634497,
+            "milneError": 1.5796601402612298,
+            "histogramKL": 0.19827868122348263,
+            "histogramW1": 0.05730091497538462
+          }
+        }
+      }
+    },
+    {
+      "turn": 6,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7825,
+      "stdDev": 0.1697,
+      "skew": -0.0785,
+      "kurt": -1.4821,
+      "count": 12,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7825,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1697,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7897545746443709,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.01942494673928269,
+          "milne": 0.004103166713404985,
+          "signals": {
+            "forecastError": 0.01942494673928269,
+            "forecastErr": 0.016794783033819444,
+            "baselineDistance": 0.01942494673928269,
+            "milneError": 0.004103166713404985,
+            "histogramKL": 0.18001020596172448,
+            "histogramW1": 0.04289187472397606
+          }
+        },
+        "kalman": {
+          "metric": 0.7825352426631094,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.01942494673928269,
+          "milne": 1.3635555179652963,
+          "signals": {
+            "forecastError": 0.01942494673928269,
+            "forecastErr": 0.01387990280543645,
+            "baselineDistance": 0.01942494673928269,
+            "milneError": 1.3635555179652963,
+            "histogramKL": 0.18326688330938617,
+            "histogramW1": 0.05057806989719141
+          }
+        }
+      }
+    },
+    {
+      "turn": 7,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7614,
+      "stdDev": 0.1787,
+      "skew": 0.0154,
+      "kurt": -1.5091,
+      "count": 13,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7614,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1787,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7911377653821919,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.018400578335814613,
+          "milne": 0.004495250538930021,
+          "signals": {
+            "forecastError": 0.018400578335814613,
+            "forecastErr": 0.018400578335814613,
+            "baselineDistance": 0.016454968043569607,
+            "milneError": 0.004495250538930021,
+            "histogramKL": 0.18929180312120536,
+            "histogramW1": 0.04664251391849123
+          }
+        },
+        "kalman": {
+          "metric": 0.8054937793863867,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.016454968043569607,
+          "milne": 0.5080383808476904,
+          "signals": {
+            "forecastError": 0.016454968043569607,
+            "forecastErr": 0.014373007975660379,
+            "baselineDistance": 0.016454968043569607,
+            "milneError": 0.5080383808476904,
+            "histogramKL": 0.18885267380056403,
+            "histogramW1": 0.04511191824760998
+          }
+        }
+      }
+    },
+    {
+      "turn": 8,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7602,
+      "stdDev": 0.1665,
+      "skew": 0.2108,
+      "kurt": -1.4713,
+      "count": 14,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7602,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1665,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.8005306089734588,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.019217925983819245,
+          "milne": 0.0018281792673216903,
+          "signals": {
+            "forecastError": 0.019217925983819245,
+            "forecastErr": 0.016570130937794247,
+            "baselineDistance": 0.019217925983819245,
+            "milneError": 0.0018281792673216903,
+            "histogramKL": 0.14460657595559345,
+            "histogramW1": 0.042237888574617376
+          }
+        },
+        "kalman": {
+          "metric": 0.8012112925992901,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.019217925983819245,
+          "milne": 1.5299834708117206,
+          "signals": {
+            "forecastError": 0.019217925983819245,
+            "forecastErr": 0.01683782978024545,
+            "baselineDistance": 0.019217925983819245,
+            "milneError": 1.5299834708117206,
+            "histogramKL": 0.14362025635203296,
+            "histogramW1": 0.04171696410468796
+          }
+        }
+      }
+    },
+    {
+      "turn": 9,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7693,
+      "stdDev": 0.1633,
+      "skew": 0.0826,
+      "kurt": -1.4047,
+      "count": 14,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7693,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1633,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7836767478781355,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.02153467482227258,
+          "milne": 0.0005776591150658216,
+          "signals": {
+            "forecastError": 0.02153467482227258,
+            "forecastErr": 0.01610807364826942,
+            "baselineDistance": 0.02153467482227258,
+            "milneError": 0.0005776591150658216,
+            "histogramKL": 0.14809599808268598,
+            "histogramW1": 0.04288170454325099
+          }
+        },
+        "kalman": {
+          "metric": 0.784695701356821,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.02153467482227258,
+          "milne": 0.7635843763967204,
+          "signals": {
+            "forecastError": 0.02153467482227258,
+            "forecastErr": 0.01794947980102824,
+            "baselineDistance": 0.02153467482227258,
+            "milneError": 0.7635843763967204,
+            "histogramKL": 0.14710600832771037,
+            "histogramW1": 0.04195595729532109
+          }
+        }
+      }
+    },
+    {
+      "turn": 10,
+      "phase": 1,
+      "phaseLabel": "calibration",
+      "mean": 0.7799,
+      "stdDev": 0.1605,
+      "skew": -0.0945,
+      "kurt": -1.3891,
+      "count": 15,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7799,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1605,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7813934060018783,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.024924337706664815,
+          "milne": 0.0019483550439807927,
+          "signals": {
+            "forecastError": 0.024924337706664815,
+            "forecastErr": 0.014136879481135074,
+            "baselineDistance": 0.024924337706664815,
+            "milneError": 0.0019483550439807927,
+            "histogramKL": 0.0637796205289233,
+            "histogramW1": 0.04379932498575054
+          }
+        },
+        "kalman": {
+          "metric": 0.7780574317087318,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.024924337706664815,
+          "milne": 1.7917886123648774,
+          "signals": {
+            "forecastError": 0.024924337706664815,
+            "forecastErr": 0.019986546874627587,
+            "baselineDistance": 0.024924337706664815,
+            "milneError": 1.7917886123648774,
+            "histogramKL": 0.06478709582291743,
+            "histogramW1": 0.047500251549328215
+          }
+        }
+      }
+    },
+    {
+      "turn": 11,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.7792,
+      "stdDev": 0.1554,
+      "skew": -0.0833,
+      "kurt": -1.2846,
+      "count": 16,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7792,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1554,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7621761056144741,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.02878078069315452,
+          "milne": 0.0011627756405524097,
+          "signals": {
+            "forecastError": 0.02878078069315452,
+            "forecastErr": 0.01428639359355174,
+            "baselineDistance": 0.02878078069315452,
+            "milneError": 0.0011627756405524097,
+            "histogramKL": 0.061519039915415255,
+            "histogramW1": 0.036686715742770375
+          }
+        },
+        "kalman": {
+          "metric": 0.7555426404082828,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.02878078069315452,
+          "milne": 1.8637703584689203,
+          "signals": {
+            "forecastError": 0.02878078069315452,
+            "forecastErr": 0.02242554684880612,
+            "baselineDistance": 0.02878078069315452,
+            "milneError": 1.8637703584689203,
+            "histogramKL": 0.06504498113289736,
+            "histogramW1": 0.043589091624955306
+          }
+        }
+      }
+    },
+    {
+      "turn": 12,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.7609,
+      "stdDev": 0.1675,
+      "skew": -0.1081,
+      "kurt": -1.2304,
+      "count": 17,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7609,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1675,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.784493594243412,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.02614026642982426,
+          "milne": 0.0010612191125449768,
+          "signals": {
+            "forecastError": 0.02614026642982426,
+            "forecastErr": 0.01619011437142059,
+            "baselineDistance": 0.02614026642982426,
+            "milneError": 0.0010612191125449768,
+            "histogramKL": 0.055807319884233694,
+            "histogramW1": 0.032743359504041475
+          }
+        },
+        "kalman": {
+          "metric": 0.7839883861846177,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.02614026642982426,
+          "milne": 1.967129706567612,
+          "signals": {
+            "forecastError": 0.02614026642982426,
+            "forecastErr": 0.019960692704453404,
+            "baselineDistance": 0.02614026642982426,
+            "milneError": 1.967129706567612,
+            "histogramKL": 0.055247632029231,
+            "histogramW1": 0.03351751553109535
+          }
+        }
+      }
+    },
+    {
+      "turn": 13,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.7653,
+      "stdDev": 0.1542,
+      "skew": 0.0566,
+      "kurt": -1.2701,
+      "count": 18,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7653,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1542,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7566164700082849,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.029387881980004294,
+          "milne": 0.000609888290707258,
+          "signals": {
+            "forecastError": 0.029387881980004294,
+            "forecastErr": 0.015792263133674524,
+            "baselineDistance": 0.029387881980004294,
+            "milneError": 0.000609888290707258,
+            "histogramKL": 0.06675265114371215,
+            "histogramW1": 0.036931384806910016
+          }
+        },
+        "kalman": {
+          "metric": 0.7577209793939833,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.029387881980004294,
+          "milne": 1.4260856226818164,
+          "signals": {
+            "forecastError": 0.029387881980004294,
+            "forecastErr": 0.022352736715933092,
+            "baselineDistance": 0.029387881980004294,
+            "milneError": 1.4260856226818164,
+            "histogramKL": 0.06633997145011658,
+            "histogramW1": 0.03572977745215062
+          }
+        }
+      }
+    },
+    {
+      "turn": 14,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.7533,
+      "stdDev": 0.164,
+      "skew": 0.0859,
+      "kurt": -1.3842,
+      "count": 18,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7533,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.164,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7565805792562299,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.029118929604154117,
+          "milne": 0.0014482348293130786,
+          "signals": {
+            "forecastError": 0.029118929604154117,
+            "forecastErr": 0.014950911704070879,
+            "baselineDistance": 0.029118929604154117,
+            "milneError": 0.0014482348293130786,
+            "histogramKL": 0.0781305142366195,
+            "histogramW1": 0.03571271378830537
+          }
+        },
+        "kalman": {
+          "metric": 0.7552533828760596,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.029118929604154117,
+          "milne": 0.736052949574293,
+          "signals": {
+            "forecastError": 0.029118929604154117,
+            "forecastErr": 0.020378258397724464,
+            "baselineDistance": 0.029118929604154117,
+            "milneError": 0.736052949574293,
+            "histogramKL": 0.07925075322382369,
+            "histogramW1": 0.03696927774834841
+          }
+        }
+      }
+    },
+    {
+      "turn": 15,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.7456,
+      "stdDev": 0.1628,
+      "skew": 0.1956,
+      "kurt": -1.3842,
+      "count": 19,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7456,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1628,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7366456098580951,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.031207441629446664,
+          "milne": 0.0006771239894979664,
+          "signals": {
+            "forecastError": 0.031207441629446664,
+            "forecastErr": 0.011203598748531461,
+            "baselineDistance": 0.031207441629446664,
+            "milneError": 0.0006771239894979664,
+            "histogramKL": 0.08927742030952034,
+            "histogramW1": 0.03958250904185632
+          }
+        },
+        "kalman": {
+          "metric": 0.7373670035923949,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.031207441629446664,
+          "milne": 1.3078526454605,
+          "signals": {
+            "forecastError": 0.031207441629446664,
+            "forecastErr": 0.020407792581203708,
+            "baselineDistance": 0.031207441629446664,
+            "milneError": 1.3078526454605,
+            "histogramKL": 0.08859452116088347,
+            "histogramW1": 0.038921706305287705
+          }
+        }
+      }
+    },
+    {
+      "turn": 16,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.7524,
+      "stdDev": 0.1555,
+      "skew": 0.1236,
+      "kurt": -1.2322,
+      "count": 20,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7524,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1555,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7252583766472727,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.03335746877046461,
+          "milne": 0.0007019163462258421,
+          "signals": {
+            "forecastError": 0.03335746877046461,
+            "forecastErr": 0.015434192349648391,
+            "baselineDistance": 0.03335746877046461,
+            "milneError": 0.0007019163462258421,
+            "histogramKL": 0.07776232914434013,
+            "histogramW1": 0.03950149911625384
+          }
+        },
+        "kalman": {
+          "metric": 0.7287082945389414,
+          "alert": false,
+          "regime": "drift",
+          "error": 0.03335746877046461,
+          "milne": 1.4675890274472965,
+          "signals": {
+            "forecastError": 0.03335746877046461,
+            "forecastErr": 0.02225896912891081,
+            "baselineDistance": 0.03335746877046461,
+            "milneError": 1.4675890274472965,
+            "histogramKL": 0.07609415316095203,
+            "histogramW1": 0.03586205044126784
+          }
+        }
+      }
+    },
+    {
+      "turn": 17,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.7453,
+      "stdDev": 0.1608,
+      "skew": 0.1582,
+      "kurt": -1.3347,
+      "count": 20,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7453,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1608,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7184627482532194,
+          "alert": true,
+          "regime": "drift",
+          "error": 0.034431915153231754,
+          "milne": 0.003244881533469494,
+          "signals": {
+            "forecastError": 0.034431915153231754,
+            "forecastErr": 0.01204842664781495,
+            "baselineDistance": 0.034431915153231754,
+            "milneError": 0.003244881533469494,
+            "histogramKL": 0.09033953618251496,
+            "histogramW1": 0.03528752001552814
+          }
+        },
+        "kalman": {
+          "metric": 0.7153879281506504,
+          "alert": true,
+          "regime": "drift",
+          "error": 0.034431915153231754,
+          "milne": 0.7795155873646746,
+          "signals": {
+            "forecastError": 0.034431915153231754,
+            "forecastErr": 0.020725273683633045,
+            "baselineDistance": 0.034431915153231754,
+            "milneError": 0.7795155873646746,
+            "histogramKL": 0.09200687629905357,
+            "histogramW1": 0.03847710210364934
+          }
+        }
+      }
+    },
+    {
+      "turn": 18,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.7309,
+      "stdDev": 0.1697,
+      "skew": 0.1143,
+      "kurt": -1.2434,
+      "count": 21,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7309,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1697,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.7001403641335379,
+          "alert": true,
+          "regime": "drift",
+          "error": 0.03747461816062695,
+          "milne": 0.004428641776103388,
+          "signals": {
+            "forecastError": 0.03747461816062695,
+            "forecastErr": 0.012815081424144427,
+            "baselineDistance": 0.03747461816062695,
+            "milneError": 0.004428641776103388,
+            "histogramKL": 0.08674768472966252,
+            "histogramW1": 0.03401031233584017
+          }
+        },
+        "kalman": {
+          "metric": 0.7013755662127825,
+          "alert": true,
+          "regime": "drift",
+          "error": 0.03747461816062695,
+          "milne": 1.1095979232342605,
+          "signals": {
+            "forecastError": 0.03747461816062695,
+            "forecastErr": 0.01903648909047781,
+            "baselineDistance": 0.03747461816062695,
+            "milneError": 1.1095979232342605,
+            "histogramKL": 0.08504047333894249,
+            "histogramW1": 0.03304023325796267
+          }
+        }
+      }
+    },
+    {
+      "turn": 19,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.7167,
+      "stdDev": 0.1804,
+      "skew": -0.0395,
+      "kurt": -0.8878,
+      "count": 22,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.7167,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1804,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.6548150186198662,
+          "alert": true,
+          "regime": "drift",
+          "error": 0.043483894687620386,
+          "milne": 0.0034723929679919756,
+          "signals": {
+            "forecastError": 0.043483894687620386,
+            "forecastErr": 0.012468513586952917,
+            "baselineDistance": 0.043483894687620386,
+            "milneError": 0.0034723929679919756,
+            "histogramKL": 0.10356889560606447,
+            "histogramW1": 0.03528015147337806
+          }
+        },
+        "kalman": {
+          "metric": 0.6560639318876693,
+          "alert": true,
+          "regime": "drift",
+          "error": 0.043483894687620386,
+          "milne": 3.5321369273508134,
+          "signals": {
+            "forecastError": 0.043483894687620386,
+            "forecastErr": 0.017938442466023254,
+            "baselineDistance": 0.043483894687620386,
+            "milneError": 3.5321369273508134,
+            "histogramKL": 0.10276255981537273,
+            "histogramW1": 0.034023356289221915
+          }
+        }
+      }
+    },
+    {
+      "turn": 20,
+      "phase": 2,
+      "phaseLabel": "stylistic",
+      "mean": 0.721,
+      "stdDev": 0.177,
+      "skew": -0.0666,
+      "kurt": -0.771,
+      "count": 22,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.721,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.177,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.6385176237402047,
+          "alert": true,
+          "regime": "drift",
+          "error": 0.045659496222214734,
+          "milne": 0.001834364044801339,
+          "signals": {
+            "forecastError": 0.045659496222214734,
+            "forecastErr": 0.011077560008940505,
+            "baselineDistance": 0.045659496222214734,
+            "milneError": 0.001834364044801339,
+            "histogramKL": 0.09651293135536305,
+            "histogramW1": 0.03954900232742748
+          }
+        },
+        "kalman": {
+          "metric": 0.642413939571305,
+          "alert": true,
+          "regime": "drift",
+          "error": 0.045659496222214734,
+          "milne": 3.8355948936693145,
+          "signals": {
+            "forecastError": 0.045659496222214734,
+            "forecastErr": 0.014404239178083238,
+            "baselineDistance": 0.045659496222214734,
+            "milneError": 3.8355948936693145,
+            "histogramKL": 0.09369208352788937,
+            "histogramW1": 0.035719677678349236
+          }
+        }
+      }
+    },
+    {
+      "turn": 21,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.702,
+      "stdDev": 0.1946,
+      "skew": -0.2438,
+      "kurt": -0.5975,
+      "count": 23,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.702,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.1946,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.5829023194774164,
+          "alert": true,
+          "regime": "contamination",
+          "error": 0.05415462147850215,
+          "milne": 0.0015801132224625507,
+          "signals": {
+            "forecastError": 0.05415462147850215,
+            "forecastErr": 0.016730847998656442,
+            "baselineDistance": 0.05415462147850215,
+            "milneError": 0.0015801132224625507,
+            "histogramKL": 0.09969506650210827,
+            "histogramW1": 0.037371724848450576
+          }
+        },
+        "kalman": {
+          "metric": 0.5838648771470941,
+          "alert": true,
+          "regime": "contamination",
+          "error": 0.05415462147850215,
+          "milne": 5.006931429422191,
+          "signals": {
+            "forecastError": 0.05415462147850215,
+            "forecastErr": 0.014393723052170296,
+            "baselineDistance": 0.05415462147850215,
+            "milneError": 5.006931429422191,
+            "histogramKL": 0.09865774473213462,
+            "histogramW1": 0.03652785217582947
+          }
+        }
+      }
+    },
+    {
+      "turn": 22,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.6729,
+      "stdDev": 0.2331,
+      "skew": -0.6839,
+      "kurt": 0.0848,
+      "count": 24,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.6729,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.2331,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.4312821044703209,
+          "alert": true,
+          "regime": "contamination",
+          "error": 0.07475960148826319,
+          "milne": 0.0027081717448166755,
+          "signals": {
+            "forecastError": 0.07475960148826319,
+            "forecastErr": 0.024925169532137866,
+            "baselineDistance": 0.07475960148826319,
+            "milneError": 0.0027081717448166755,
+            "histogramKL": 0.11817450868599752,
+            "histogramW1": 0.04893231012371019
+          }
+        },
+        "kalman": {
+          "metric": 0.4302358600255291,
+          "alert": true,
+          "regime": "contamination",
+          "error": 0.07475960148826319,
+          "milne": 10.066908735631257,
+          "signals": {
+            "forecastError": 0.07475960148826319,
+            "forecastErr": 0.026048585776494895,
+            "baselineDistance": 0.07475960148826319,
+            "milneError": 10.066908735631257,
+            "histogramKL": 0.11833108921011168,
+            "histogramW1": 0.050140829300226085
+          }
+        }
+      }
+    },
+    {
+      "turn": 23,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.6768,
+      "stdDev": 0.2241,
+      "skew": -0.5367,
+      "kurt": -0.2431,
+      "count": 24,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.6768,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.2241,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.3559864761130368,
+          "alert": true,
+          "regime": "contamination",
+          "error": 0.08426922052288636,
+          "milne": 0.005042703237725337,
+          "signals": {
+            "forecastError": 0.08426922052288636,
+            "forecastErr": 0.018852650453922027,
+            "baselineDistance": 0.08426922052288636,
+            "milneError": 0.005042703237725337,
+            "histogramKL": 0.1303899051183023,
+            "histogramW1": 0.059545492945774166
+          }
+        },
+        "kalman": {
+          "metric": 0.36530482807920667,
+          "alert": true,
+          "regime": "contamination",
+          "error": 0.08426922052288636,
+          "milne": 6.120585346040562,
+          "signals": {
+            "forecastError": 0.08426922052288636,
+            "forecastErr": 0.02552925204305908,
+            "baselineDistance": 0.08426922052288636,
+            "milneError": 6.120585346040562,
+            "histogramKL": 0.12443476262932324,
+            "histogramW1": 0.050150013333064035
+          }
+        }
+      }
+    },
+    {
+      "turn": 24,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.6513,
+      "stdDev": 0.2527,
+      "skew": -0.6997,
+      "kurt": -0.0792,
+      "count": 25,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.6513,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.2527,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.21967447466086398,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.1040878249183948,
+          "milne": 0.007718130690906081,
+          "signals": {
+            "forecastError": 0.1040878249183948,
+            "forecastErr": 0.02842204566411911,
+            "baselineDistance": 0.1040878249183948,
+            "milneError": 0.007718130690906081,
+            "histogramKL": 0.13920016216407904,
+            "histogramW1": 0.06192798241058109
+          }
+        },
+        "kalman": {
+          "metric": 0.21749163676401265,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.1040878249183948,
+          "milne": 7.124923361665802,
+          "signals": {
+            "forecastError": 0.1040878249183948,
+            "forecastErr": 0.033593882166005784,
+            "baselineDistance": 0.1040878249183948,
+            "milneError": 7.124923361665802,
+            "histogramKL": 0.14069588804521682,
+            "histogramW1": 0.06409867012246137
+          }
+        }
+      }
+    },
+    {
+      "turn": 25,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.6287,
+      "stdDev": 0.2726,
+      "skew": -0.6873,
+      "kurt": -0.2956,
+      "count": 26,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.6287,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.2726,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0.052537754184451155,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.12778691263212644,
+          "milne": 0.0066321853479792674,
+          "signals": {
+            "forecastError": 0.12778691263212644,
+            "forecastErr": 0.02501941921835072,
+            "baselineDistance": 0.12778691263212644,
+            "milneError": 0.0066321853479792674,
+            "histogramKL": 0.14305552193780624,
+            "histogramW1": 0.0717427373403052
+          }
+        },
+        "kalman": {
+          "metric": 0.05120503706798546,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.12778691263212644,
+          "milne": 5.19505770413141,
+          "signals": {
+            "forecastError": 0.12778691263212644,
+            "forecastErr": 0.041638764685472895,
+            "baselineDistance": 0.12778691263212644,
+            "milneError": 5.19505770413141,
+            "histogramKL": 0.1476515452823904,
+            "histogramW1": 0.07196319087668879
+          }
+        }
+      }
+    },
+    {
+      "turn": 26,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.6112,
+      "stdDev": 0.2813,
+      "skew": -0.5625,
+      "kurt": -0.6825,
+      "count": 27,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.6112,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.2813,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.14980081227377168,
+          "milne": 0.003959907856150652,
+          "signals": {
+            "forecastError": 0.14980081227377168,
+            "forecastErr": 0.02537724644646943,
+            "baselineDistance": 0.14980081227377168,
+            "milneError": 0.003959907856150652,
+            "histogramKL": 0.15388961685384828,
+            "histogramW1": 0.07946029925704719
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.14980081227377168,
+          "milne": 2.3714527626175665,
+          "signals": {
+            "forecastError": 0.14980081227377168,
+            "forecastErr": 0.04465804461951239,
+            "baselineDistance": 0.14980081227377168,
+            "milneError": 2.3714527626175665,
+            "histogramKL": 0.1572678964286494,
+            "histogramW1": 0.07918401053346003
+          }
+        }
+      }
+    },
+    {
+      "turn": 27,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.6098,
+      "stdDev": 0.2838,
+      "skew": -0.5819,
+      "kurt": -0.6564,
+      "count": 27,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.6098,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.2838,
+          "alert": false
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.16400221427344933,
+          "milne": 0.0009547544490093355,
+          "signals": {
+            "forecastError": 0.16400221427344933,
+            "forecastErr": 0.018598962300500815,
+            "baselineDistance": 0.16400221427344933,
+            "milneError": 0.0009547544490093355,
+            "histogramKL": 0.144419007486432,
+            "histogramW1": 0.08489572912409785
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.16400221427344933,
+          "milne": 2.66643322030743,
+          "signals": {
+            "forecastError": 0.16400221427344933,
+            "forecastErr": 0.04731875199004671,
+            "baselineDistance": 0.16400221427344933,
+            "milneError": 2.66643322030743,
+            "histogramKL": 0.1559759739142595,
+            "histogramW1": 0.08791610409823673
+          }
+        }
+      }
+    },
+    {
+      "turn": 28,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.5881,
+      "stdDev": 0.3008,
+      "skew": -0.5513,
+      "kurt": -0.7969,
+      "count": 28,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.5881,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.3008,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.18347682444860736,
+          "milne": 0.0034939895166510833,
+          "signals": {
+            "forecastError": 0.18347682444860736,
+            "forecastErr": 0.033279502445247335,
+            "baselineDistance": 0.18347682444860736,
+            "milneError": 0.0034939895166510833,
+            "histogramKL": 0.15404779013541056,
+            "histogramW1": 0.09016975539037635
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.18347682444860736,
+          "milne": 2.1486812210846336,
+          "signals": {
+            "forecastError": 0.18347682444860736,
+            "forecastErr": 0.05092777248708319,
+            "baselineDistance": 0.18347682444860736,
+            "milneError": 2.1486812210846336,
+            "histogramKL": 0.15558664615746237,
+            "histogramW1": 0.09196844828962843
+          }
+        }
+      }
+    },
+    {
+      "turn": 29,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.5678,
+      "stdDev": 0.3145,
+      "skew": -0.4978,
+      "kurt": -0.9503,
+      "count": 29,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.5678,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.3145,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.2049519620820543,
+          "milne": 0.003027872790146399,
+          "signals": {
+            "forecastError": 0.2049519620820543,
+            "forecastErr": 0.02488541956816954,
+            "baselineDistance": 0.2049519620820543,
+            "milneError": 0.003027872790146399,
+            "histogramKL": 0.14909753047020413,
+            "histogramW1": 0.08998119532366969
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.2049519620820543,
+          "milne": 1.7912400753880222,
+          "signals": {
+            "forecastError": 0.2049519620820543,
+            "forecastErr": 0.0537135320820645,
+            "baselineDistance": 0.2049519620820543,
+            "milneError": 1.7912400753880222,
+            "histogramKL": 0.16619011303024317,
+            "histogramW1": 0.1002713710576226
+          }
+        }
+      }
+    },
+    {
+      "turn": 30,
+      "phase": 3,
+      "phaseLabel": "adjacent",
+      "mean": 0.5678,
+      "stdDev": 0.3145,
+      "skew": -0.4978,
+      "kurt": -0.9503,
+      "count": 29,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.5678,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.3145,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.21783704466212245,
+          "milne": 0.0010417643974813954,
+          "signals": {
+            "forecastError": 0.21783704466212245,
+            "forecastErr": 0.026992424079454794,
+            "baselineDistance": 0.21783704466212245,
+            "milneError": 0.0010417643974813954,
+            "histogramKL": 0.16071400159602642,
+            "histogramW1": 0.10098248594822656
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.21783704466212245,
+          "milne": 1.9985200550598685,
+          "signals": {
+            "forecastError": 0.21783704466212245,
+            "forecastErr": 0.05731311855793472,
+            "baselineDistance": 0.21783704466212245,
+            "milneError": 1.9985200550598685,
+            "histogramKL": 0.17162544129683385,
+            "histogramW1": 0.10631823127075837
+          }
+        }
+      }
+    },
+    {
+      "turn": 31,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.5489,
+      "stdDev": 0.3256,
+      "skew": -0.4359,
+      "kurt": -1.0881,
+      "count": 30,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.5489,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.3256,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.23433185962495454,
+          "milne": 0.001874940372416292,
+          "signals": {
+            "forecastError": 0.23433185962495454,
+            "forecastErr": 0.037210970358020054,
+            "baselineDistance": 0.23433185962495454,
+            "milneError": 0.001874940372416292,
+            "histogramKL": 0.17527717734538845,
+            "histogramW1": 0.10670554029331619
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.23433185962495454,
+          "milne": 1.7849253867756572,
+          "signals": {
+            "forecastError": 0.23433185962495454,
+            "forecastErr": 0.05844589877835153,
+            "baselineDistance": 0.23433185962495454,
+            "milneError": 1.7849253867756572,
+            "histogramKL": 0.1800082275675824,
+            "histogramW1": 0.11111579076794796
+          }
+        }
+      }
+    },
+    {
+      "turn": 32,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.5312,
+      "stdDev": 0.3346,
+      "skew": -0.372,
+      "kurt": -1.2043,
+      "count": 31,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.5312,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.3346,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.2521427933187941,
+          "milne": 0.002983710880186181,
+          "signals": {
+            "forecastError": 0.2521427933187941,
+            "forecastErr": 0.03030279350429304,
+            "baselineDistance": 0.2521427933187941,
+            "milneError": 0.002983710880186181,
+            "histogramKL": 0.15883425352165917,
+            "histogramW1": 0.09742084530716143
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.2521427933187941,
+          "milne": 1.8098904845769812,
+          "signals": {
+            "forecastError": 0.2521427933187941,
+            "forecastErr": 0.057950378681025996,
+            "baselineDistance": 0.2521427933187941,
+            "milneError": 1.8098904845769812,
+            "histogramKL": 0.17929713772126465,
+            "histogramW1": 0.11199541778217652
+          }
+        }
+      }
+    },
+    {
+      "turn": 33,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.5146,
+      "stdDev": 0.3421,
+      "skew": -0.3086,
+      "kurt": -1.2995,
+      "count": 32,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.5146,
+          "alert": false
+        },
+        "static-sigma": {
+          "metric": 0.3421,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.2700597068229359,
+          "milne": 0.001904342407681561,
+          "signals": {
+            "forecastError": 0.2700597068229359,
+            "forecastErr": 0.03516690065727662,
+            "baselineDistance": 0.2700597068229359,
+            "milneError": 0.001904342407681561,
+            "histogramKL": 0.18444942772165213,
+            "histogramW1": 0.1131471421877689
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.2700597068229359,
+          "milne": 1.900351525943272,
+          "signals": {
+            "forecastError": 0.2700597068229359,
+            "forecastErr": 0.05644430082041313,
+            "baselineDistance": 0.2700597068229359,
+            "milneError": 1.900351525943272,
+            "histogramKL": 0.18919654435218858,
+            "histogramW1": 0.11706341996745807
+          }
+        }
+      }
+    },
+    {
+      "turn": 34,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.499,
+      "stdDev": 0.3482,
+      "skew": -0.2471,
+      "kurt": -1.376,
+      "count": 33,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.499,
+          "alert": true
+        },
+        "static-sigma": {
+          "metric": 0.3482,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.28741663283257923,
+          "milne": 0.0004301173366429868,
+          "signals": {
+            "forecastError": 0.28741663283257923,
+            "forecastErr": 0.025439768832153653,
+            "baselineDistance": 0.28741663283257923,
+            "milneError": 0.0004301173366429868,
+            "histogramKL": 0.1771484297352237,
+            "histogramW1": 0.10843007831177012
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.28741663283257923,
+          "milne": 1.9670625335817384,
+          "signals": {
+            "forecastError": 0.28741663283257923,
+            "forecastErr": 0.05429088634973382,
+            "baselineDistance": 0.28741663283257923,
+            "milneError": 1.9670625335817384,
+            "histogramKL": 0.18973667665731858,
+            "histogramW1": 0.11818310218994507
+          }
+        }
+      }
+    },
+    {
+      "turn": 35,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.499,
+      "stdDev": 0.3482,
+      "skew": -0.2471,
+      "kurt": -1.376,
+      "count": 33,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.499,
+          "alert": true
+        },
+        "static-sigma": {
+          "metric": 0.3482,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.2978307884383653,
+          "milne": 0.0005537431996911741,
+          "signals": {
+            "forecastError": 0.2978307884383653,
+            "forecastErr": 0.02217283003213421,
+            "baselineDistance": 0.2978307884383653,
+            "milneError": 0.0005537431996911741,
+            "histogramKL": 0.17904506273732998,
+            "histogramW1": 0.1119405353476088
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.2978307884383653,
+          "milne": 2.141990406997406,
+          "signals": {
+            "forecastError": 0.2978307884383653,
+            "forecastErr": 0.059445537735945596,
+            "baselineDistance": 0.2978307884383653,
+            "milneError": 2.141990406997406,
+            "histogramKL": 0.19789972705333087,
+            "histogramW1": 0.1258569770032445
+          }
+        }
+      }
+    },
+    {
+      "turn": 36,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.4843,
+      "stdDev": 0.3533,
+      "skew": -0.1879,
+      "kurt": -1.4364,
+      "count": 34,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.4843,
+          "alert": true
+        },
+        "static-sigma": {
+          "metric": 0.3533,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.3101832189463345,
+          "milne": 0.0026613612327218484,
+          "signals": {
+            "forecastError": 0.3101832189463345,
+            "forecastErr": 0.039328201761480455,
+            "baselineDistance": 0.3101832189463345,
+            "milneError": 0.0026613612327218484,
+            "histogramKL": 0.20568880446110963,
+            "histogramW1": 0.12692057430756779
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.3101832189463345,
+          "milne": 2.0337173389633074,
+          "signals": {
+            "forecastError": 0.3101832189463345,
+            "forecastErr": 0.05924493792461069,
+            "baselineDistance": 0.3101832189463345,
+            "milneError": 2.0337173389633074,
+            "histogramKL": 0.2047700745259034,
+            "histogramW1": 0.12671433055706988
+          }
+        }
+      }
+    },
+    {
+      "turn": 37,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.4705,
+      "stdDev": 0.3574,
+      "skew": -0.1311,
+      "kurt": -1.4833,
+      "count": 35,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.4705,
+          "alert": true
+        },
+        "static-sigma": {
+          "metric": 0.3574,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.32319876096379657,
+          "milne": 0.0037175295593787658,
+          "signals": {
+            "forecastError": 0.32319876096379657,
+            "forecastErr": 0.039161970529995566,
+            "baselineDistance": 0.32319876096379657,
+            "milneError": 0.0037175295593787658,
+            "histogramKL": 0.17970370520079965,
+            "histogramW1": 0.10570761902911961
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.32319876096379657,
+          "milne": 1.965759474591246,
+          "signals": {
+            "forecastError": 0.32319876096379657,
+            "forecastErr": 0.05665057868433248,
+            "baselineDistance": 0.32319876096379657,
+            "milneError": 1.965759474591246,
+            "histogramKL": 0.20389806620942508,
+            "histogramW1": 0.12624018492659533
+          }
+        }
+      }
+    },
+    {
+      "turn": 38,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.4574,
+      "stdDev": 0.3608,
+      "skew": -0.0768,
+      "kurt": -1.5186,
+      "count": 36,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.4574,
+          "alert": true
+        },
+        "static-sigma": {
+          "metric": 0.3608,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.33624378152039747,
+          "milne": 0.0025239538259652734,
+          "signals": {
+            "forecastError": 0.33624378152039747,
+            "forecastErr": 0.04208687135792244,
+            "baselineDistance": 0.33624378152039747,
+            "milneError": 0.0025239538259652734,
+            "histogramKL": 0.2112925721457855,
+            "histogramW1": 0.12794456686168806
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.33624378152039747,
+          "milne": 1.9073879627610764,
+          "signals": {
+            "forecastError": 0.33624378152039747,
+            "forecastErr": 0.05323736956617543,
+            "baselineDistance": 0.33624378152039747,
+            "milneError": 1.9073879627610764,
+            "histogramKL": 0.21258863437751996,
+            "histogramW1": 0.12916987775330946
+          }
+        }
+      }
+    },
+    {
+      "turn": 39,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.4582,
+      "stdDev": 0.3597,
+      "skew": -0.0738,
+      "kurt": -1.5182,
+      "count": 36,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.4582,
+          "alert": true
+        },
+        "static-sigma": {
+          "metric": 0.3597,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.3435777858610465,
+          "milne": 0.001240455112786744,
+          "signals": {
+            "forecastError": 0.3435777858610465,
+            "forecastErr": 0.0319233361180273,
+            "baselineDistance": 0.3435777858610465,
+            "milneError": 0.001240455112786744,
+            "histogramKL": 0.1992789567904022,
+            "histogramW1": 0.118731238917461
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.3435777858610465,
+          "milne": 2.209428190320244,
+          "signals": {
+            "forecastError": 0.3435777858610465,
+            "forecastErr": 0.05932909916200132,
+            "baselineDistance": 0.3435777858610465,
+            "milneError": 2.209428190320244,
+            "histogramKL": 0.22171303975442316,
+            "histogramW1": 0.13585236215375288
+          }
+        }
+      }
+    },
+    {
+      "turn": 40,
+      "phase": 4,
+      "phaseLabel": "contamination",
+      "mean": 0.4459,
+      "stdDev": 0.3625,
+      "skew": -0.0222,
+      "kurt": -1.5434,
+      "count": 37,
+      "detectors": {
+        "static-mean": {
+          "metric": 0.4459,
+          "alert": true
+        },
+        "static-sigma": {
+          "metric": 0.3625,
+          "alert": true
+        },
+        "abm": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.35283323804540034,
+          "milne": 0.0030113181762472306,
+          "signals": {
+            "forecastError": 0.35283323804540034,
+            "forecastErr": 0.046884866211753015,
+            "baselineDistance": 0.35283323804540034,
+            "milneError": 0.0030113181762472306,
+            "histogramKL": 0.22377360543305827,
+            "histogramW1": 0.13614547442844518
+          }
+        },
+        "kalman": {
+          "metric": 0,
+          "alert": true,
+          "regime": "rot",
+          "error": 0.35283323804540034,
+          "milne": 1.988882874630663,
+          "signals": {
+            "forecastError": 0.35283323804540034,
+            "forecastErr": 0.058778804639833815,
+            "baselineDistance": 0.35283323804540034,
+            "milneError": 1.988882874630663,
+            "histogramKL": 0.21976035914305977,
+            "histogramW1": 0.13347203879746616
+          }
+        }
+      }
+    }
+  ],
+  "leadTimes": {
+    "static-mean": {
+      "phase1": null,
+      "phase2": null,
+      "phase3": null,
+      "phase4": 4
+    },
+    "static-sigma": {
+      "phase1": null,
+      "phase2": null,
+      "phase3": 8,
+      "phase4": 1
+    },
+    "abm": {
+      "phase1": null,
+      "phase2": 7,
+      "phase3": 1,
+      "phase4": 1
+    },
+    "kalman": {
+      "phase1": null,
+      "phase2": 7,
+      "phase3": 1,
+      "phase4": 1
+    }
+  }
+}
